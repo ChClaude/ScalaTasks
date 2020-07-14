@@ -29,13 +29,14 @@ object Task2 extends App {
   })
 
   // Find number(s) that are not in setOne and setTwo
-  println("\n\nPrint number(s) that don't occur in the two data structures")
-  setOne.foreach(num => {
-    if (!setTwo.contains(num)) print(num + ", ")
-  })
-
+  println("\n\nPrint number(s) that don't occur in setTwo")
   setTwo.foreach(num => {
     if (!setOne.contains(num)) print(num + ", ")
+  })
+
+  println("\n\nand those that don't occur in setOne")
+  setOne.foreach(num => {
+    if (!setTwo.contains(num)) print(num + ", ")
   })
 }
 

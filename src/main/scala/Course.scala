@@ -10,13 +10,20 @@ object CourseConversion {
 }
 
 class CourseId(course: Course) {
-  def courseId = println(course.name + ", Course Price: R" + course.price)
+  def courseId = println(course.name + ", " + course.name.hashCode())
 }
 
 object RunCourse {
-  def main(args: Array[String]): Unit = {
-    val appDevCourse = new Course("Application Development", 7500)
 
-    println(appDevCourse.toString)
+  import CourseConversion._
+
+  def main(args: Array[String]): Unit = {
+    val course1 = new Course("ICE362S Elective, FT", 40000)
+    val course2 = new Course("ICE262S Elective, FT", 35000)
+    val course3 = new Course("ICF152S Elective, FT", 30000)
+
+    println(course1.courseId)
+    println(course2.courseId)
+    println(course3.courseId)
   }
 }
